@@ -1,0 +1,75 @@
+/* Барбершоп: тёплое тёмное стекло, золото, антиква в заголовках */
+:root {
+  --bg: #120f0c;
+  --blob-1: #d9a35b;
+  --blob-2: #6b3a1f;
+  --blob-3: #1f4b4a;
+  --accent-ink: #1d1409;
+  --font-head: "Playfair Display", Georgia, serif;
+}
+.topbar .name { font-size: 19px; }
+.h1 { font-size: 28px; }
+
+.hero-shop { padding: 22px; position: relative; overflow: hidden; }
+.hero-shop .pole {
+  position: absolute; right: 18px; top: 18px; width: 16px; height: 86px; border-radius: 8px; opacity: .9;
+  background: repeating-linear-gradient(135deg, #f3ece2 0 8px, #b5322f 8px 16px, #f3ece2 16px 24px, #2b4d8f 24px 32px);
+  box-shadow: 0 0 0 3px rgba(255,255,255,.15), 0 6px 20px rgba(0,0,0,.4);
+  animation: poleSpin 3s linear infinite; background-size: 100% 64px;
+}
+@keyframes poleSpin { to { background-position: 0 64px; } }
+@media (prefers-reduced-motion: reduce) { .hero-shop .pole { animation: none; } }
+.hero-shop h2 { font-size: 30px; margin: 8px 70px 8px 0; line-height: 1.08; }
+.hero-shop p { color: var(--muted); margin: 0 0 16px; }
+
+.promo-chip { padding: 12px 14px; flex: 0 0 230px; }
+.promo-chip b { display: block; font-family: var(--font-head); font-size: 17px; color: var(--accent); }
+.promo-chip span { font-size: 13px; color: var(--muted); }
+.hscroll { display: flex; gap: 10px; overflow-x: auto; padding: 2px 2px 8px; scrollbar-width: none; }
+.hscroll::-webkit-scrollbar { display: none; }
+
+.svc { display: flex; gap: 12px; align-items: center; padding: 12px 14px; cursor: pointer; }
+.svc .em { width: 44px; height: 44px; flex: none; border-radius: 14px; display: grid; place-items: center; font-size: 21px; background: color-mix(in srgb, var(--accent) 16%, transparent); }
+.svc .price { font-family: var(--font-head); font-weight: 700; font-size: 17px; white-space: nowrap; }
+.svc.selected { outline: 2px solid var(--accent); outline-offset: -2px; }
+
+.master { display: flex; gap: 12px; align-items: center; padding: 14px; cursor: pointer; }
+.master .ava {
+  width: 54px; height: 54px; flex: none; border-radius: 50%; display: grid; place-items: center;
+  font-family: var(--font-head); font-size: 22px; font-weight: 700; color: var(--accent-ink);
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+}
+.master.selected { outline: 2px solid var(--accent); outline-offset: -2px; }
+
+.steps { display: flex; gap: 6px; margin: 0 4px 14px; }
+.steps i { flex: 1; height: 4px; border-radius: 2px; background: var(--glass-strong); }
+.steps i.on { background: var(--accent); }
+
+.day-chip { flex: none; width: 58px; padding: 8px 0; text-align: center; border-radius: 16px; border: 1px solid var(--stroke); background: var(--glass); cursor: pointer; }
+.day-chip b { display: block; font-family: var(--font-head); font-size: 20px; }
+.day-chip span { font-size: 11px; font-weight: 800; text-transform: uppercase; color: var(--muted); }
+.day-chip.active { background: var(--accent); color: var(--accent-ink); border-color: transparent; }
+.day-chip.active span { color: var(--accent-ink); }
+
+.slots { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.slot { padding: 11px 0; border-radius: 14px; border: 1px solid var(--stroke); background: var(--glass); font-weight: 800; cursor: pointer; text-align: center; }
+.slot.busy { opacity: .3; text-decoration: line-through; cursor: default; }
+.slot.active { background: var(--accent); color: var(--accent-ink); border-color: transparent; }
+
+.summary { padding: 16px; }
+.summary .line { display: flex; justify-content: space-between; gap: 10px; padding: 6px 0; border-bottom: 1px dashed var(--stroke); font-size: 14.5px; }
+.summary .line:last-child { border-bottom: 0; }
+.summary .line span { color: var(--muted); }
+
+.work { aspect-ratio: 1; padding: 14px; display: flex; flex-direction: column; justify-content: flex-end; position: relative; overflow: hidden; }
+.work .big { position: absolute; top: 10px; right: 12px; font-size: 40px; }
+.work b { font-family: var(--font-head); font-size: 17px; }
+.work span { font-size: 12.5px; color: var(--muted); }
+.stars { color: var(--accent); letter-spacing: 2px; }
+
+.booking { padding: 16px; }
+.booking .when { font-family: var(--font-head); font-size: 20px; font-weight: 700; }
+.status-pill { font-size: 12px; font-weight: 800; padding: 3px 9px; border-radius: 999px; background: var(--glass-strong); }
+.status-pill.new { background: color-mix(in srgb, var(--accent) 25%, transparent); }
+.status-pill.done { background: rgba(52, 199, 89, .2); }
+.status-pill.cancelled { background: rgba(255, 59, 48, .2); }

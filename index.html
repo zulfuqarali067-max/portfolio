@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Мини-приложения в Telegram под ключ</title>
+<meta name="description" content="Запись клиентов, курсы, хабы для блогеров и розыгрыши внутри Telegram. Три рабочих демо — открой и потрогай. От 10 000 ₽.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Golos+Text:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f4f2ee; --surface: #ffffff; --line: #ddd8cf; --text: #1d1b18; --muted: #6a655c;
+    --accent: #0f6b5c; --accent-ink: #ffffff; --soft: #e3efe9;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #14130f; --surface: #1d1b16; --line: #34312a; --text: #f1ede4; --muted: #a39d90;
+      --accent: #4cc9a8; --accent-ink: #0d1f1a; --soft: #1b2a25; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.55 "Golos Text", system-ui, sans-serif; }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 48px 20px 80px; display: flex; flex-direction: column; gap: 56px; }
+  h1, h2 { font-family: Unbounded, "Golos Text", sans-serif; letter-spacing: -.02em; text-wrap: balance; margin: 0; }
+  h1 { font-size: clamp(28px, 6vw, 46px); line-height: 1.1; font-weight: 700; }
+  h2 { font-size: clamp(20px, 3.4vw, 26px); font-weight: 700; }
+  p { margin: 0; }
+  .lede { color: var(--muted); max-width: 58ch; font-size: 18px; }
+  header { display: flex; flex-direction: column; gap: 20px; }
+  .eyebrow { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+  .btns { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn { display: inline-block; padding: 12px 22px; border-radius: 10px; font-weight: 600; text-decoration: none; }
+  .btn.main { background: var(--accent); color: var(--accent-ink); }
+  .btn.ghost { border: 1px solid var(--line); color: var(--text); background: var(--surface); }
+  .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+  .demo { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; }
+  .demo img { width: 100%; height: 260px; object-fit: cover; object-position: top; display: block; background: var(--soft); }
+  .demo div { padding: 18px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+  .demo h3 { margin: 0; font-size: 17px; }
+  .demo p { color: var(--muted); font-size: 14.5px; flex: 1; }
+  .demo a { color: var(--accent); font-weight: 600; text-decoration: none; }
+  ul.list { margin: 0; padding: 0; list-style: none; display: grid; gap: 12px; max-width: 64ch; }
+  ul.list li { padding-left: 22px; position: relative; }
+  ul.list li::before { content: ""; position: absolute; left: 0; top: .6em; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); }
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 18px; }
+  .steps div { border-top: 2px solid var(--accent); padding-top: 12px; }
+  .steps b { display: block; margin-bottom: 4px; }
+  .steps span { color: var(--muted); font-size: 14.5px; }
+  .price { background: var(--soft); border-radius: 14px; padding: 24px; display: flex; flex-direction: column; gap: 8px; }
+  .price strong { font-family: Unbounded, sans-serif; font-size: 30px; }
+  section { display: flex; flex-direction: column; gap: 18px; }
+  footer { color: var(--muted); font-size: 14px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <span class="eyebrow">Telegram Mini App · под ключ</span>
+  <h1>Запись клиентов, курсы и розыгрыши прямо в Telegram</h1>
+  <p class="lede">Приложение открывается кнопкой в боте — клиентам ничего ставить не нужно. Вы сами меняете тексты, цены и расписание с телефона, а заявки приходят вам в Telegram.</p>
+  <div class="btns">
+    <a class="btn main" href="https://t.me/valera_demo_bot">Обсудить задачу</a>
+    <a class="btn ghost" href="#demo">Открыть демо</a>
+  </div>
+</header>
+
+<section id="demo">
+  <h2>Три рабочих демо — нажимайте, как клиент</h2>
+  <div class="grid">
+    <article class="demo">
+      <img src="shots/bar-book.png" alt="Запись в барбершоп: услуга, мастер, время" loading="lazy">
+      <div>
+        <h3>Онлайн-запись</h3>
+        <p>Услуга → мастер → свободное время → контакты. Двойная запись невозможна, клиент сам отменяет. Для салонов, мастеров, репетиторов.</p>
+        <a href="barbershop/">Открыть демо →</a>
+      </div>
+    </article>
+    <article class="demo">
+      <img src="shots/ege-trainer.png" alt="Тренажёр задач с проверкой ответа" loading="lazy">
+      <div>
+        <h3>Тренажёр и витрина курса</h3>
+        <p>Задача дня с проверкой, бесплатные материалы, вебинары, заявка с промокодом. Для онлайн-школ и репетиторов.</p>
+        <a href="ege-trainer/">Открыть демо →</a>
+      </div>
+    </article>
+    <article class="demo">
+      <img src="shots/val-admin.png" alt="Хаб стримера с админ-панелью" loading="lazy">
+      <div>
+        <h3>Хаб для блогера</h3>
+        <p>Кнопка «В эфире», гайды, розыгрыши с проверкой подписки, промокоды партнёров. Для стримеров и авторов каналов.</p>
+        <a href="valorant-hub/">Открыть демо →</a>
+      </div>
+    </article>
+  </div>
+  <p class="lede" style="font-size:15px">В демо шестерёнка вверху открывает админ-панель — так выглядит управление. Ваши правки хранятся только в вашем браузере.</p>
+</section>
+
+<section>
+  <h2>Что внутри каждого приложения</h2>
+  <ul class="list">
+    <li><b>Админ-панель в телефоне.</b> Меняете тексты, цены, расписание, скрываете и добавляете карточки без программиста.</li>
+    <li><b>Заявки со статусами.</b> О новой заявке или записи бот сразу пишет вам в Telegram.</li>
+    <li><b>Статистика.</b> Сколько человек открыло приложение, что смотрят, куда нажимают.</li>
+    <li><b>Ваши названия, цвета и тексты.</b> Демо на вашем бренде показываю до оплаты.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Как работаем</h2>
+  <div class="steps">
+    <div><b>1. Разговор 15 минут</b><span>Разбираем, что нужно именно вам.</span></div>
+    <div><b>2. Демо до оплаты</b><span>На ваших названиях и цветах.</span></div>
+    <div><b>3. Запуск</b><span>Наполняю, подключаю бота, помогаю с сервером.</span></div>
+    <div><b>4. Обучение</b><span>Показываю админку. Мелкие правки первый месяц бесплатно.</span></div>
+  </div>
+</section>
+
+<section>
+  <h2>Стоимость</h2>
+  <div class="price">
+    <strong>от 10 000 ₽</strong>
+    <p>Точная цена — после разговора о задаче. Срок от 3 дней на готовое решение. Работаю как самозанятый, даю чек.</p>
+  </div>
+  <div class="btns"><a class="btn main" href="https://t.me/valera_demo_bot">Написать в Telegram</a></div>
+</section>
+
+<footer>Тюмень · самозанятый</footer>
+</div>
+</body>
+</html>
