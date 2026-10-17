@@ -25,6 +25,39 @@ async function defaultContent() {
   return baseContent;
 }
 
+// Если в content.json задан backendUrl (Google Apps Script, см. google-backend/УСТАНОВКА.md),
+// записи уходят в Google-таблицу и календарь, а занятые часы читаются оттуда же.
+async function backendUrl() {
+  const c = load('content', null) || await defaultContent();
+  return (c && c.backendUrl) || '';
+}
+
+async function sendToGoogle(fields) {
+  const url = await backendUrl();
+  if (!url) return;
+  let res;
+  try {
+    // text/plain: так браузер не делает предварительный запрос, который Apps Script не принимает
+    res = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify({ kind: 'booking', fields, secret: (await defaultContent()).backendSecret || '' }) });
+  } catch (e) { fail(503, 'Нет связи с таблицей записи. Попробуй ещё раз.'); }
+  let data = {};
+  try { data = await res.json(); } catch { fail(502, 'Таблица записи ответила не так, как ждали.'); }
+  if (data.error === 'busy') fail(409, data.message || 'Это время уже заняли. Выбери другое.');
+  if (data.error) fail(502, 'Не получилось записать. Попробуй позже.');
+}
+
+async function googleBusy(date, master) {
+  const url = await backendUrl();
+  if (!url) return [];
+  try {
+    const secret = (await defaultContent()).backendSecret || '';
+    const res = await fetch(`${url}?action=slots&date=${encodeURIComponent(date)}&master=${encodeURIComponent(master)}&secret=${encodeURIComponent(secret)}`);
+    const data = await res.json();
+    return Array.isArray(data.busy) ? data.busy : [];
+  } catch { return []; }
+}
+
 export async function staticApi(path, method, body, userId) {
   const url = new URL(path, location.origin);
   const p = url.pathname;
@@ -47,6 +80,7 @@ export async function staticApi(path, method, body, userId) {
     const kind = clean(body.kind, 30) || 'lead';
     const fields = {};
     for (const [k, v] of Object.entries(body.fields || {}).slice(0, 20)) fields[clean(k, 40)] = clean(v, 1000);
+    if (kind === 'booking') await sendToGoogle(fields);
     const leads = load('leads', []);
     if (kind === 'booking') {
       const taken = leads.some((l) => l.kind === 'booking' && l.status !== 'cancelled' &&
@@ -67,6 +101,7 @@ export async function staticApi(path, method, body, userId) {
     const busy = load('leads', [])
       .filter((l) => l.kind === 'booking' && l.status !== 'cancelled' && l.fields.date === date && l.fields.master === master)
       .map((l) => l.fields.time);
+    for (const t of await googleBusy(date, master)) if (!busy.includes(t)) busy.push(t);
     return { busy };
   }
 
