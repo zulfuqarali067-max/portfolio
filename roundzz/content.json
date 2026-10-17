@@ -1,0 +1,210 @@
+{
+  "brand": {
+    "name": "ROUNDZZ",
+    "tagline": "Valorant: новости, стримы, киберспорт",
+    "avatarText": "RZ",
+    "avatarUrl": "",
+    "accent": "#ff3d71",
+    "accent2": "#ffb703",
+    "channelUrl": "https://t.me/roundzz",
+    "footer": "Демо-версия для канала «ROUNDZZ». Все тексты и ссылки автор меняет в админке."
+  },
+  "stream": {
+    "live": false,
+    "title": "Стримы — анонс в канале",
+    "url": "https://twitch.tv/roundzz_",
+    "platform": "Twitch",
+    "schedule": [
+      "Расписание стримов появится здесь — автор правит его в админке за минуту"
+    ]
+  },
+  "videos": [
+    {
+      "id": "v1",
+      "title": "Свежее в канале",
+      "tag": "Канал",
+      "emoji": "📰",
+      "url": "https://t.me/roundzz",
+      "date": "2026-10-17"
+    }
+  ],
+  "lineups": [
+    {
+      "id": "l1",
+      "title": "Разведстрела на B-главный",
+      "agent": "Sova",
+      "map": "Ascent",
+      "side": "Атака",
+      "site": "B",
+      "difficulty": "Легко",
+      "desc": "Встань вплотную к левому ящику на B-лобби. Прицел — на верхний край антенны над воротами. Полный заряд, один отскок. Стрела ложится в центр плента и подсвечивает дефолт и угол у ящиков.",
+      "videoUrl": "https://www.youtube.com/results?search_query=sova+recon+ascent+b"
+    },
+    {
+      "id": "l2",
+      "title": "Шок-стрелы на дефолт-планту A",
+      "agent": "Sova",
+      "map": "Ascent",
+      "side": "Пост-плант",
+      "site": "A",
+      "difficulty": "Средне",
+      "desc": "Из A-мейна, с левого края дверного проёма. Две шок-стрелы с двумя отскоками накрывают стандартную точку разминирования. Кидай, как только услышишь звук дефуза.",
+      "videoUrl": "https://www.youtube.com/results?search_query=sova+shock+dart+ascent+a"
+    },
+    {
+      "id": "l3",
+      "title": "Стена на A-сайт с атаки",
+      "agent": "Viper",
+      "map": "Haven",
+      "side": "Атака",
+      "site": "A",
+      "difficulty": "Легко",
+      "desc": "Стена ставится с A-лонга по линии между колонной и правым краем хевена. Закрывает обзор с хевена и с короткого — команда спокойно заходит на плент.",
+      "videoUrl": "https://www.youtube.com/results?search_query=viper+wall+haven+a"
+    },
+    {
+      "id": "l4",
+      "title": "Молли на дефолт B",
+      "agent": "Viper",
+      "map": "Bind",
+      "side": "Пост-плант",
+      "site": "B",
+      "difficulty": "Сложно",
+      "desc": "С B-лонга, присев у левой стены. Прицел — на угол крыши над окном, бросок в прыжке. Змеиный укус перекрывает весь дефолт: дефузить можно только сквозь кислоту.",
+      "videoUrl": "https://www.youtube.com/results?search_query=viper+snakebite+bind+b"
+    },
+    {
+      "id": "l5",
+      "title": "Смоки на заход в A",
+      "agent": "Brimstone",
+      "map": "Split",
+      "side": "Атака",
+      "site": "A",
+      "difficulty": "Легко",
+      "desc": "Три смока: хевен, рафтеры и двери на мид. Ставь с карты одной серией перед выходом команды — ровно 19 секунд прикрытия.",
+      "videoUrl": "https://www.youtube.com/results?search_query=brimstone+smokes+split+a"
+    },
+    {
+      "id": "l6",
+      "title": "Нож-разведка на мид",
+      "agent": "KAY/O",
+      "map": "Lotus",
+      "side": "Атака",
+      "site": "Mid",
+      "difficulty": "Средне",
+      "desc": "Из мид-тоннеля, прицел на верхний правый угол стены. Нож подавляет способности на миде и показывает, кто стоит на корнерах.",
+      "videoUrl": "https://www.youtube.com/results?search_query=kayo+knife+lotus+mid"
+    },
+    {
+      "id": "l7",
+      "title": "Сетап турели и сигналок на B",
+      "agent": "Killjoy",
+      "map": "Sunset",
+      "side": "Защита",
+      "site": "B",
+      "difficulty": "Легко",
+      "desc": "Турель за ящиками на B, сигналки — на входе с главного и под стеной у марки. Ловишь рашеров одной кнопкой, не выходя под пули.",
+      "videoUrl": "https://www.youtube.com/results?search_query=killjoy+setup+sunset+b"
+    },
+    {
+      "id": "l8",
+      "title": "Мост-молли на A-лобби",
+      "agent": "Gekko",
+      "map": "Icebox",
+      "side": "Защита",
+      "site": "A",
+      "difficulty": "Средне",
+      "desc": "Mosh Pit кидается с A-сайта через трубу по дуге. Отбивает раш в первые секунды раунда и даёт время на ротацию.",
+      "videoUrl": "https://www.youtube.com/results?search_query=gekko+mosh+icebox+a"
+    }
+  ],
+  "crosshairs": [
+    {
+      "id": "c1",
+      "title": "Зелёная точка",
+      "note": "Для тех, кто стреляет тапами. Ничего лишнего.",
+      "code": "0;P;c;1;h;0;d;1;z;3;0b;0;1b;0"
+    },
+    {
+      "id": "c2",
+      "title": "Чистый плюс (циан)",
+      "note": "Классика: короткие линии без обводки, без ошибки стрельбы.",
+      "code": "0;P;c;5;h;0;0t;2;0l;4;0o;2;0a;1;0f;0;1b;0"
+    },
+    {
+      "id": "c3",
+      "title": "Белый компакт с обводкой",
+      "note": "Хорошо виден на светлых картах вроде Icebox и Breeze.",
+      "code": "0;P;c;0;h;1;t;1;o;1;0t;1;0l;3;0o;2;0a;1;0f;0;1b;0"
+    },
+    {
+      "id": "c4",
+      "title": "Розовый мини",
+      "note": "Почти не перекрывает голову противника на дальних дистанциях.",
+      "code": "0;P;c;6;h;0;0t;1;0l;2;0o;2;0a;1;0f;0;1b;0"
+    },
+    {
+      "id": "c5",
+      "title": "Жёлтый для новичков",
+      "note": "Внешние линии показывают разброс — помогает отучиться стрелять в беге.",
+      "code": "0;P;c;4;h;1;o;1;0t;2;0l;5;0o;3;0a;1;0f;0;1t;2;1l;2;1o;9;1a;0.5"
+    }
+  ],
+  "giveaways": [
+    {
+      "id": "g1",
+      "title": "Пример розыгрыша: скин на выбор",
+      "prize": "Любой скин из магазина",
+      "desc": "Пример. Нажми «Участвую» — победителя выберет бот случайно.",
+      "endsAt": "2026-11-15T20:00",
+      "requireChannel": "",
+      "winnersCount": 1
+    }
+  ],
+  "promos": [
+    {
+      "id": "p2",
+      "partner": "Игровые мыши",
+      "title": "Мышь как у меня — со скидкой 15%",
+      "code": "RADIANT15",
+      "desc": "Девайсы, на которых играю на стримах. Код действует до конца месяца.",
+      "url": "https://example.com/",
+      "badge": "Реклама"
+    },
+    {
+      "id": "p3",
+      "partner": "Тренер по аиму",
+      "title": "Бесплатная неделя тренировок",
+      "code": "",
+      "desc": "Без промокода — просто переходи по ссылке.",
+      "url": "https://example.com/",
+      "badge": "Подарок"
+    }
+  ],
+  "links": [
+    {
+      "id": "s1",
+      "title": "Twitch — стримы",
+      "emoji": "🟣",
+      "url": "https://twitch.tv/roundzz_"
+    },
+    {
+      "id": "s2",
+      "title": "Чат канала",
+      "emoji": "💬",
+      "url": "https://t.me/roundzztalk"
+    },
+    {
+      "id": "s3",
+      "title": "Киберспорт",
+      "emoji": "🏆",
+      "url": "https://t.me/cyberroundzz"
+    },
+    {
+      "id": "s4",
+      "title": "Про жизнь",
+      "emoji": "🙂",
+      "url": "https://t.me/ya_roundzz"
+    }
+  ]
+}

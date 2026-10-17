@@ -1,0 +1,65 @@
+/* Тренажёр ЕГЭ: светлое стекло, фиолетово-бирюзовая гамма, мотив бензольного кольца */
+:root {
+  --bg: #eef0fb;
+  --blob-1: #8f72ff;
+  --blob-2: #3fd8c4;
+  --blob-3: #ff9ac6;
+  --font-head: "Unbounded", "Manrope", sans-serif;
+}
+.topbar .name { font-size: 15px; font-weight: 700; }
+.h1 { font-size: 22px; font-weight: 700; }
+.section-title { font-size: 15px; font-weight: 700; }
+
+.count-hero {
+  padding: 20px; position: relative; overflow: hidden; color: #fff; border: 0;
+  background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent-2) 85%, var(--accent)));
+  box-shadow: 0 16px 40px color-mix(in srgb, var(--accent) 35%, transparent), inset 0 1px 0 rgba(255,255,255,.35);
+}
+.count-hero .ring { position: absolute; right: -26px; top: -18px; width: 150px; height: 150px; opacity: .22; }
+.count-hero .kicker { font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; opacity: .85; }
+.count-hero .days { font-family: var(--font-head); font-size: 54px; font-weight: 800; line-height: 1; margin: 8px 0 2px; }
+.count-hero .days small { font-size: 18px; font-weight: 700; margin-left: 6px; }
+.count-hero .meta { opacity: .9; font-size: 13.5px; }
+.progress-line { display: flex; gap: 10px; margin-top: 16px; }
+.progress-line > div { flex: 1; background: rgba(255,255,255,.18); border-radius: 14px; padding: 10px 12px; }
+.progress-line b { display: block; font-family: var(--font-head); font-size: 20px; }
+.progress-line span { font-size: 12px; opacity: .9; }
+
+.daily { padding: 18px; }
+.daily .q { white-space: pre-line; margin: 10px 0 14px; font-size: 15px; }
+.topic-pill { display: inline-flex; gap: 6px; align-items: center; font-size: 12px; font-weight: 800; color: var(--accent); background: color-mix(in srgb, var(--accent) 12%, transparent); padding: 4px 10px; border-radius: 999px; }
+
+.task-row .status {
+  width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; flex: none;
+  font-size: 14px; font-weight: 800; background: var(--glass-strong); border: 1px solid var(--stroke);
+}
+.task-row .status.ok { background: #18b26b; color: #fff; border-color: transparent; }
+.task-row .status.bad { background: #ff5a5f; color: #fff; border-color: transparent; }
+.task-row .status svg { width: 16px; height: 16px; }
+
+.answer-box { display: flex; gap: 8px; margin: 12px 0; }
+.answer-box input { flex: 1; font-size: 18px; font-weight: 800; letter-spacing: .1em; text-align: center; }
+.verdict { border-radius: 16px; padding: 12px 14px; font-weight: 700; margin-bottom: 12px; }
+.verdict.ok { background: rgba(24, 178, 107, .14); color: #0d8a50; }
+.verdict.bad { background: rgba(255, 90, 95, .14); color: #d23c41; }
+.solution { background: var(--glass-strong); border: 1px solid var(--stroke); border-radius: 16px; padding: 12px 14px; white-space: pre-line; font-size: 14px; }
+
+.webinar { display: flex; gap: 12px; align-items: center; padding: 12px 14px; cursor: pointer; }
+.webinar .date {
+  width: 52px; flex: none; text-align: center; border-radius: 14px; padding: 6px 0;
+  background: color-mix(in srgb, var(--accent) 12%, transparent); color: var(--accent);
+}
+.webinar .date b { display: block; font-family: var(--font-head); font-size: 18px; line-height: 1.1; }
+.webinar .date span { font-size: 11px; font-weight: 800; text-transform: uppercase; }
+
+.course-card { padding: 20px; }
+.course-card h2 { font-size: 20px; font-weight: 700; margin-bottom: 6px; }
+.features { list-style: none; padding: 0; margin: 14px 0; display: grid; gap: 9px; }
+.features li { display: flex; gap: 10px; font-size: 14.5px; }
+.features li::before { content: "✓"; flex: none; width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; font-size: 12px; font-weight: 800; color: #fff; background: var(--accent-2); }
+.price { font-family: var(--font-head); font-size: 22px; font-weight: 700; margin: 4px 0 12px; }
+.promo-strip { display: flex; align-items: center; gap: 10px; padding: 12px 14px; border-radius: 16px; border: 1.5px dashed var(--accent); margin-bottom: 14px; }
+.promo-strip b { font-family: var(--font-head); letter-spacing: .06em; }
+.review { padding: 14px 16px; }
+.review .who { font-weight: 800; }
+.review .score { color: var(--accent); font-weight: 800; font-size: 13px; }
