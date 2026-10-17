@@ -1,0 +1,118 @@
+/* Ралоди: бумага, чёрный маркер и наклейки вместо стекла и градиентов.
+   Подключается поверх общего каркаса и перекрашивает его переменными. */
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;800&family=Caveat:wght@600&display=swap");
+
+:root,
+[data-theme="light"],
+[data-theme="dark"] {
+  --bg: #ece6d6;
+  --text: #1b1815;
+  --muted: #5d5649;
+  --faint: #8a8272;
+  --accent: #6a46ff;
+  --accent-2: #ffd43b;
+  --accent-ink: #ffffff;
+  --glass: #fffaec;
+  --glass-strong: #fff3d0;
+  --stroke: #1b1815;
+  --highlight: transparent;
+  --shadow: 4px 4px 0 #1b1815;
+  --radius: 10px;
+  --radius-sm: 8px;
+  --font-head: "Rubik", system-ui, sans-serif;
+  --font-body: "Rubik", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: light;
+}
+
+body {
+  background-color: var(--bg);
+  background-image: radial-gradient(#1b181520 1px, transparent 1.4px);
+  background-size: 18px 18px;
+}
+.bg-blobs { display: none; }
+
+/* карточки: плотный лист с обводкой и жёсткой тенью, без размытия */
+.glass {
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  border: 2px solid var(--stroke);
+  box-shadow: var(--shadow);
+}
+.hscroll .glass { box-shadow: 3px 3px 0 var(--stroke); }
+.hscroll { padding: 2px 8px 10px 2px; }
+.cut { clip-path: none; border-radius: var(--radius); }
+
+h1, h2, h3, .section-title, .topbar .name {
+  text-transform: none;
+  letter-spacing: -.01em;
+  font-weight: 800;
+}
+.section-title {
+  font-size: 20px;
+  width: fit-content;
+  background: linear-gradient(transparent 58%, var(--accent-2) 58%);
+  padding: 0 4px;
+  margin-left: -4px;
+}
+.section-title small { background: none; }
+
+/* шапка */
+.topbar .tagline { color: var(--muted); }
+.avatar {
+  background: var(--accent);
+  color: #fff;
+  border: 2px solid var(--stroke);
+  border-radius: 12px;
+  box-shadow: 3px 3px 0 var(--stroke);
+}
+.icon-btn { background: #fffaec; border: 2px solid var(--stroke); box-shadow: 2px 2px 0 var(--stroke); border-radius: 10px; color: var(--text); }
+
+/* блок стрима: цветной лист-наклейка */
+.stream-hero { background: var(--accent); color: #fff; border-color: var(--stroke); transform: rotate(-.6deg); }
+.stream-hero::after { display: none; }
+.stream-hero h2 { font-size: 26px; line-height: 1.12; text-transform: none; }
+.stream-hero .muted, .schedule li { color: #efeaff; }
+.schedule li::before { background: var(--accent-2); transform: none; border-radius: 50%; }
+.stream-hero .badge { background: var(--accent-2); color: #1b1815; border: 2px solid var(--stroke); }
+.stream-hero .btn.primary { background: var(--accent-2); color: #1b1815; }
+
+/* кнопки */
+.btn { border: 2px solid var(--stroke); border-radius: 10px; font-weight: 700; box-shadow: 3px 3px 0 var(--stroke); transition: transform .08s, box-shadow .08s; }
+.btn:active { transform: translate(3px, 3px); box-shadow: 0 0 0 var(--stroke); }
+.btn.primary { background: var(--accent-2); color: #1b1815; }
+.btn.ghost { background: #fffaec; color: var(--text); }
+
+/* метки и чипы */
+.badge { background: #fffaec; color: var(--text); border: 2px solid var(--stroke); border-radius: 6px; font-weight: 700; }
+.badge.accent { background: var(--accent); color: #fff; }
+.chip { background: #fffaec; border: 2px solid var(--stroke); color: var(--text); border-radius: 8px; }
+.chip.active { background: var(--accent-2); color: #1b1815; }
+
+/* видео и плитки */
+.vcard .thumb { background: #ded6c0; border-bottom: 2px solid var(--stroke); }
+.vcard .thumb .play { background: var(--stroke); }
+.vcard .cap small { color: var(--faint); }
+.tile:nth-child(odd) { transform: rotate(.7deg); }
+.tile:nth-child(even) { transform: rotate(-.7deg); }
+.tile b { text-transform: none; font-size: 17px; letter-spacing: 0; font-weight: 800; }
+
+/* список ссылок */
+.item .ico { background: var(--accent-2); border: 2px solid var(--stroke); color: #1b1815; border-radius: 10px; }
+
+/* розыгрыши и промокоды */
+.gw-card .prize { color: var(--accent); }
+.promo .code { background: #fff; border: 2px dashed var(--stroke); color: var(--text); border-radius: 6px; }
+
+/* нижняя панель */
+.tabbar { border-radius: 14px; background: #fffaec; border: 2px solid var(--stroke); box-shadow: 4px 4px 0 var(--stroke); padding: 5px; }
+.tabbar button { border-radius: 9px; color: var(--muted); transition: none; }
+.tabbar button.active { background: var(--accent-2); color: #1b1815; box-shadow: none; border: 2px solid var(--stroke); }
+.tabbar button.active svg { color: #1b1815; }
+
+/* подписи от руки */
+.demo-note, .muted.note { font-family: "Caveat", cursive; font-size: 18px; color: var(--muted); }
+
+@media (prefers-reduced-motion: reduce) {
+  .btn { transition: none; }
+  .stream-hero, .tile:nth-child(odd), .tile:nth-child(even) { transform: none; }
+}
