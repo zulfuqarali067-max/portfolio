@@ -114,7 +114,7 @@ h1, h2, h3, .section-title, .topbar .name {
 .tile .em { filter: saturate(1.2); }
 
 /* список ссылок */
-.item .ico { background: var(--accent-2); border: 2px solid #0e0a0f; color: #0e0a0f; border-radius: 4px; }
+.item .ico { background: #ffffff; border: 2px solid #0e0a0f; color: #0e0a0f; border-radius: 4px; }
 
 /* розыгрыши и промокоды */
 .gw-card .prize { color: var(--accent-2); }
