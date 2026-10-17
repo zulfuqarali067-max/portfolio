@@ -73,3 +73,6 @@
 .status-pill.new { background: color-mix(in srgb, var(--accent) 25%, transparent); }
 .status-pill.done { background: rgba(52, 199, 89, .2); }
 .status-pill.cancelled { background: rgba(255, 59, 48, .2); }
+
+/* тень внутри горизонтальной ленты обрезалась и давала тёмный прямоугольник */
+.hscroll .glass { box-shadow: inset 0 1px 0 var(--highlight); }
