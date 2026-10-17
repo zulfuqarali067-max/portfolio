@@ -107,7 +107,7 @@ h1, h2, h3, .section-title, .topbar .name {
 .tile span { color: var(--muted); }
 
 /* список ссылок */
-.item .ico { background: #ffffff; border: 3px solid #0a0a0a; color: #0a0a0a; border-radius: 50%; }
+.item .ico { background: #0a0a0a; border: 3px solid var(--accent); color: #fff; border-radius: 50%; }
 
 /* розыгрыши и промокоды */
 .gw-card .prize { color: var(--accent); }
