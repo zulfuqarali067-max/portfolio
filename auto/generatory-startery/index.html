@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Генераторы Стартеры (демо)</title>
+<style>
+  :root { --accent: #0b7285; --tint: #e9f7f9; --ink: #1a1a1a; --muted: #5c5c5c; --line: #e4e0d8; --bg: #fbfaf7; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; color: var(--ink); background: var(--bg); padding-bottom: 84px; }
+  .demo-top { background: #1a1a1a; color: #f3f0e8; font-size: 12.5px; padding: 8px 14px; text-align: center; }
+  .wrap { max-width: 640px; margin: 0 auto; padding: 0 16px; }
+  header { background: var(--tint); border-bottom: 1px solid var(--line); padding: 26px 0 22px; }
+  .cat { font-size: 13px; letter-spacing: .04em; text-transform: uppercase; color: var(--accent); font-weight: 700; margin: 0 0 8px; }
+  h1 { font-size: 30px; line-height: 1.12; margin: 0 0 10px; letter-spacing: -.01em; }
+  .meta { color: var(--muted); font-size: 15px; margin: 4px 0; }
+  .meta a { color: inherit; }
+  .rate { font-weight: 700; color: var(--ink); }
+  .actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 18px; }
+  .btn { display: flex; align-items: center; justify-content: center; min-height: 52px; border-radius: 12px; font-weight: 700; font-size: 17px; text-decoration: none; border: 2px solid var(--accent); }
+  .btn.call { background: var(--accent); color: #fff; }
+  .btn.route { background: #fff; color: var(--accent); }
+  .btn:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
+  section { padding: 24px 0 4px; }
+  h2 { font-size: 20px; margin: 0 0 12px; }
+  .phone { font-size: 28px; font-weight: 800; letter-spacing: .01em; color: var(--ink); text-decoration: none; display: inline-block; }
+  .price-list { list-style: none; margin: 0; padding: 0; border: 1px solid var(--line); border-radius: 14px; background: #fff; }
+  .price-list li { display: flex; justify-content: space-between; gap: 14px; padding: 12px 14px; border-top: 1px solid var(--line); }
+  .price-list li:first-child { border-top: 0; }
+  .price-list b { white-space: nowrap; }
+  .note { font-size: 13.5px; color: var(--muted); margin: 10px 0 0; }
+  dl { margin: 0; display: grid; gap: 12px; }
+  dt { font-size: 13px; color: var(--muted); }
+  dd { margin: 2px 0 0; font-size: 17px; }
+  footer { margin-top: 30px; padding: 20px 0 30px; border-top: 1px solid var(--line); font-size: 13px; color: var(--muted); }
+  .float { position: fixed; left: 0; right: 0; bottom: 0; padding: 10px 16px calc(10px + env(safe-area-inset-bottom)); background: rgba(251,250,247,.96); border-top: 1px solid var(--line); }
+  .float .btn { max-width: 608px; margin: 0 auto; }
+  @media (min-width: 700px) { .float { display: none; } body { padding-bottom: 0; } }
+</style>
+</head>
+<body>
+<div class="demo-top">Демо-концепт. Не официальный сайт. Подготовлено Валерой, удалим по первой просьбе.</div>
+<header>
+  <div class="wrap">
+    <p class="cat">Автосервис, ремонт генераторов и стартеров</p>
+    <h1>Генераторы Стартеры</h1>
+    <p class="meta"><span class="rate">★ 4,6</span> · <a href="https://yandex.ru/maps/org/generatory_startery/22173505127/">55 отзывов на Яндекс.Картах</a></p>
+    <p class="meta">пн-пт 8:00–17:00; сб 10:00–16:00</p>
+    <p class="meta">Тюмень, микрорайон Утешево, Утешевская улица, 10</p>
+    <div class="actions">
+      <a class="btn call" href="tel:+79129229193">Позвонить</a>
+      <a class="btn route" href="https://yandex.ru/maps/org/generatory_startery/22173505127/">Маршрут</a>
+    </div>
+  </div>
+</header>
+<main class="wrap">
+  <section>
+    <h2>Стоимость работ</h2>
+    <p>Чтобы узнать стоимость работ, позвоните по номеру ниже.</p>
+  </section>
+  <section>
+    <h2>Контакты</h2>
+    <dl>
+      <div><dt>Телефон</dt><dd><a class="phone" href="tel:+79129229193">+7 (912) 922-91-93</a></dd></div>
+      <div><dt>Адрес</dt><dd>Тюмень, микрорайон Утешево, Утешевская улица, 10</dd></div>
+      <div><dt>Режим работы</dt><dd>пн-пт 8:00–17:00; сб 10:00–16:00</dd></div>
+    </dl>
+  </section>
+</main>
+<footer>
+  <div class="wrap">
+    <p><b>Демо-концепт.</b> Не официальный сайт «Генераторы Стартеры». Подготовлено Валерой, удалим по первой просьбе.</p>
+    <p>Данные взяты из публичной карточки организации на Яндекс.Картах по состоянию на 19.10.2026.</p>
+  </div>
+</footer>
+<div class="float"><a class="btn call" href="tel:+79129229193">Позвонить +7 (912) 922-91-93</a></div>
+</body>
+</html>
